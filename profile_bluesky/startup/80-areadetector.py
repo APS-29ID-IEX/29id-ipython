@@ -16,14 +16,22 @@ class MyHDF5Plugin(HDF5Plugin, FileStoreHDF5IterativeWrite):
 	def get_frames_per_point(self):
 		return self.parent.cam.num_images.get()
 	
+###
+# see: https://github.com/NSLS-II/ophyd/blob/master/ophyd/areadetector/filestore_mixins.py
+###	
+EPICS_AD_FILE_PATH_TEMPLATE = "/tmp"
+DATABROKER_FILE_PATH_ROOT = "/"
+###
+assert(EPICS_AD_FILE_PATH_TEMPLATE.startswith(DATABROKER_FILE_PATH_ROOT))
+
 
 class MySimDetector(SingleTrigger, SimDetector):
 	
 	hdf1 = Component(
 		MyHDF5Plugin, 
 		"HDF1:", 
-		root="/", 			# for databroker filestore
-		write_path_template="/tmp",	# for EPICS area detector
+		root=DATABROKER_FILE_PATH_ROOT,
+		write_path_template=EPICS_AD_FILE_PATH_TEMPLATE,
 		fs=fs,
 		)
 
