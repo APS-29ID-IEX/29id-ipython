@@ -1,23 +1,17 @@
 print(__file__)
 
-"""
-This is a multi-line, multi-paragraph docstring
-
-See what we mean?
-"""
-
-from ophyd import (EpicsScaler, EpicsSignal, EpicsSignalRO,
-                   Device, DeviceStatus)
-from ophyd import Component as Cpt
-
-import time
-
-## Beam Monitor Counts
-#bs_bm2 = EpicsSignalRO('BL14B:Det:BM2', name='bs_bm2')
-#noisy = EpicsSignalRO('xxx:userCalc1', name='noisy')
-#scaler = EpicsScaler('xxx:scaler1', name='scaler')
+"""various detectors and other signals"""
 
 aps_current = EpicsSignal("S:SRcurrentAI", name="aps_current")
+
+
+mono_energy = MonoEnergyMonitorDevice("29idmono:", name="mono_energy")
+mono_mirror = OpticalAxisMonitorDevice("29idmonoMIR:", name="mono_mirror")
+mono_grt = OpticalAxisMonitorDevice("29idmonoGRT:", name="mono_grt")
+mono_error_status = EpicsSignalRO(
+    "29idmono:IL_ERR_STS", 
+    name="mono_error_status")
+
 
 # Current Amplifier (Keithley) - Beamline:
 ca1 = EpicsSignalRO('29idb:ca1:read', name='ca1_b')
