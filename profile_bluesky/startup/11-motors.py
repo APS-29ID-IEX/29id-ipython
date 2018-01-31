@@ -9,7 +9,7 @@ print(__file__)
 #m7 = EpicsMotor('xxx:m7', name='m7')
 #m8 = EpicsMotor('xxx:m8', name='m8')
 
-m1 = MyEpicsMotorWithDial('29idb:m1', name='m1')
-m2 = MyEpicsMotorWithDial('29idb:m2', name='m2')
+m1 = EpicsMotorWithDial('29idb:m1', name='m1')
+m2 = EpicsMotorWithDial('29idb:m2', name='m2')
 
 append_wa_motor_list(m1, m2)
