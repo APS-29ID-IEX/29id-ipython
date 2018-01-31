@@ -17,6 +17,7 @@ class OpticalAxisMonitorDevice(Device):
     axis_status = Component(EpicsSignalRO, "P_AXIS_STS")
 
 
+# TODO: get from APS_BlueSky_tools.devices, when ready
 class EpicsMotorWithDial(EpicsMotor):
     """
     add motor record's dial coordinates to EpicsMotor
