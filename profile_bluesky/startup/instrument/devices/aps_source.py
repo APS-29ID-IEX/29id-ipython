@@ -5,7 +5,7 @@ APS only: connect with facility information
 
 __all__ = [
     'aps', 
-    'undulator',
+    # 'undulator',
     ]
 
 from ..session_logs import logger
