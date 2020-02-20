@@ -22,11 +22,13 @@ class MyApsDevice(apstools.devices.ApsMachineParametersDevice):
 aps = MyApsDevice(name="aps")
 sd.baseline.append(aps)
 
-# apstools.devices.ApsUndulator
-# apstools.devices.ApsUndulatorDual
-class MyUndulatorDevice(apstools.devices.ApsUndulatorDual):
-    # for local modifications
-    pass
+# TODO: insertion device?
+# Cannot connect with either of these.
+# # apstools.devices.ApsUndulator
+# # apstools.devices.ApsUndulatorDual
+# class MyUndulatorDevice(apstools.devices.ApsUndulatorDual):
+#     # for local modifications
+#     pass
 
-undulator = MyUndulatorDevice("ID29", name="undulator")
-sd.baseline.append(undulator)
+# undulator = MyUndulatorDevice("ID29", name="undulator")
+# sd.baseline.append(undulator)
