@@ -13,3 +13,12 @@ mViewer.log
 .project
 .pydevproject
 .settings
+
+# Bluesky session logs
+.logs/
+
+# Microsoft VSCode editor settings
+.vscode/
+
+# SPEC data files
+2*.dat

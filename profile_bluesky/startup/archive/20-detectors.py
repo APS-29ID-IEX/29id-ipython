@@ -5,7 +5,10 @@ print(__file__)
 aps_current = EpicsSignal("S:SRcurrentAI", name="aps_current")
 
 
-mono_energy = MonoEnergyMonitorDevice("29idmono:", name="mono_energy")
+mono_energy = EpicsSignal(
+    "29idmono:ENERGY_MON", 
+    name="mono_energy", 
+    write_pv="29idmono:ENERGY_SP")
 mono_mirror = OpticalAxisMonitorDevice("29idmonoMIR:", name="mono_mirror")
 mono_grt = OpticalAxisMonitorDevice("29idmonoGRT:", name="mono_grt")
 mono_error_status = EpicsSignalRO(
